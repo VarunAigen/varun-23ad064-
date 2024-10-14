@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varun.s- Calculator</title>
+    <style>
+        body {
+            background-color: #0088ff; /* Light blue background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator-container {
+            background-color: #ffffff; /* White box */
+            padding: 20px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for effect */
+            text-align: center;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px; /* Rounded corners for the input box */
+            font-size: 16px;
+        }
+
+        .operation-selector {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 25px; /* Rounded corners for the dropdown */
+            font-size: 16px;
+        }
+
+        .run-button {
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px; /* Rounded corners for the button */
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .run-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>VARUN_S-23AD064 calculator</h2>
+        <form method="POST">
+            <input type="text" name="number1" placeholder="Enter first number" class="input-box" required>
+            <select name="operation" class="operation-selector">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="text" name="number2" placeholder="Enter second number" class="input-box" required>
+            <button type="submit" class="run-button">Run</button>
+        </form>
+        {% if result is not none %}
+            <div class="result">Result: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
